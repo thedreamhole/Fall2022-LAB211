@@ -93,7 +93,7 @@ public class DealerList extends ArrayList<Dealer> {
         continuing = true; //default value for new dealer
         Dealer d = new Dealer(ID, name, addr, phone, continuing);
         this.add(d);
-        System.out.println("New dealer has been added.");
+        System.out.println("* New dealer has been added.\n");
         changed = true;
     }
     
@@ -105,7 +105,7 @@ public class DealerList extends ArrayList<Dealer> {
             System.out.println("Not found");
         } else {
             this.get(pos).setContinuing(false);
-            System.out.println("Removed");
+            System.out.println("Removed \n");
             changed = true; //data changed
         }
 
@@ -155,12 +155,13 @@ public class DealerList extends ArrayList<Dealer> {
                 }
                 if(newphone.isEmpty()) cont = true;
             } while (!cont);
-        }
+        }        
+        System.out.println(changed == false ? "Do not have any changes !\n" : "");
     }
     //Print all dealers
     public void printAllDealers(){
-        if(this.isEmpty()) System.out.println("Empty List !");
-        else System.out.println(this);
+        if(this.isEmpty()) System.out.println("Empty List !\n");
+        else System.out.println(this + "\n");
     }
     //Print all continuing dealers
     public void printContinuingDealers(){
@@ -175,6 +176,7 @@ public class DealerList extends ArrayList<Dealer> {
     public void writeDealerToFile(){
         if(changed){
             MyTool.writeFile(dataFile, this);
+            System.out.println("*Writted to file successfully.\n");
             changed = false; //sau khi changed xong return default value of changed
         }
     }

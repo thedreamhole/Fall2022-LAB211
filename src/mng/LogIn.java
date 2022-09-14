@@ -38,6 +38,10 @@ public class LogIn {
         boolean cont; //check to login again
         boolean valid;//valid account or not
         //log in
+        System.out.println("===============================");
+        System.out.println("==== Please Login To System ===");
+        System.out.println("===============================");
+        
         do {
             AccountChecker accChk = new AccountChecker();
             acc = inputAccount();
@@ -63,9 +67,13 @@ public class LogIn {
             DealerList dList = new DealerList(loginObj);//create a login obj for valide acc
             dList.initWithFile();
             int choice = 0;
+            System.out.println("===============================");
+            System.out.println("   Welcome to manage dealers");
+            System.out.println("===============================");
 
             do {
                 choice = menu.getChoice("Managing dealers");
+                System.out.println();
                 switch (choice) {
                     case 1:
                         dList.addDealer();
@@ -97,9 +105,10 @@ public class LogIn {
                             if (response == true) {
                                 dList.writeDealerToFile();
                             }
-                        } 
+                        }
+                        System.out.println("((: See you next time :))");
                 }
-            } while (choice > 0 && choice < menu.size());
+            } while (choice > 0 && choice <= menu.size());
         }
     }
 }

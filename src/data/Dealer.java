@@ -65,7 +65,7 @@ public class Dealer implements Comparable<Dealer>{
 
     @Override
     public String toString() {
-        return ID + SEPARATOR + name + SEPARATOR + addr + SEPARATOR + phone + SEPARATOR + continuing + "\n";
+        return "\n" + ID + SEPARATOR + name + SEPARATOR + addr + SEPARATOR + phone + SEPARATOR + continuing;
     }
     
 

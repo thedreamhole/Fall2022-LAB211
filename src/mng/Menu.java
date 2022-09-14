@@ -27,7 +27,7 @@ public class Menu extends ArrayList<String>{
         for (int i = 0; i < this.size(); ++i) {
             System.out.println(i+1 + " " + this.get(i));
         }
-        System.out.println("Other for quit.\n" + "Choose from " + 1 + " to " + this.size());
+        System.out.println("  Other for quit \n" + "  Choose from " + 1 + " to " + this.size());
             try {
                 System.out.print("Your choice: ");
                 t = new Scanner(System.in).nextInt();
