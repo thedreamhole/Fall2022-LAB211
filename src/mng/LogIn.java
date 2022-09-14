@@ -42,13 +42,12 @@ public class LogIn {
             AccountChecker accChk = new AccountChecker();
             acc = inputAccount();
             valid = accChk.check(acc);
-            //System.out.println(valid + " " + cont);
             cont = false;
             if (!valid) //if above valid is false => !valid = true => execute
             {
                 cont = MyTool.readBool("This account does not exist - Try again ?");
             }
-            if (!valid && !cont) {
+            if (!valid && !cont) { //valid == false, cont = false -> !valid = true && !cont = true => true => execute 
                 System.exit(0); // quit the program
             }
         } while (cont);

@@ -22,23 +22,19 @@ public class Menu extends ArrayList<String>{
    }
    //Get user choice
    public int getChoice(String title){ //choice from 1 to 8 . Other character refer to QUIT
-        int t = 0;
+        int t = -1;
         System.out.println(title);
         for (int i = 0; i < this.size(); ++i) {
             System.out.println(i+1 + " " + this.get(i));
         }
         System.out.println("Other for quit.\n" + "Choose from " + 1 + " to " + this.size());
-        //do {
             try {
                 System.out.print("Your choice: ");
                 t = new Scanner(System.in).nextInt();
                 return t;//if t is integer then automatic break and return value t;
             } catch (Exception e) {
-                return -1;
-//                System.out.println("Invalid choice !!!");
-//                System.out.println("Choose from " + 1 + " to " + this.size());
+                return t;
             }
-        //} while (true);
     }
 }
 

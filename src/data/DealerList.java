@@ -138,7 +138,6 @@ public class DealerList extends ArrayList<Dealer> {
                 changed = true;
             }
             //update phone  
-
             boolean cont = false;
             do {
                 System.out.print("new phone, ENTER for omitting: ");
@@ -154,6 +153,7 @@ public class DealerList extends ArrayList<Dealer> {
                         System.out.println("Invalid Phone number");
                     }
                 }
+                if(newphone.isEmpty()) cont = true;
             } while (!cont);
         }
     }
